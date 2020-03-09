@@ -38,7 +38,7 @@ public class UploadImageTest extends BaseTest{
  */
 
     @Test
-    public void uploadPicture(){
+    public void uploadPicture() {
         String pathToImage ="src/test/resources/testFiles/test_Image.jpg";
 
         loginPage.navigate();
@@ -48,6 +48,7 @@ public class UploadImageTest extends BaseTest{
 
         //Upload image with public id
         mediaLibrary.clickOnUploadButton();
+        mediaLibrary.waitTillFrameLoaded();
         getWebDriver().switchTo().frame(0);
         mediaLibrary.clickOnAdvancedButton();
         mediaLibrary.setPublicId(publicId);
