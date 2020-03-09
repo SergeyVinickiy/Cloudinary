@@ -1,4 +1,4 @@
-# Test Automation with Java TestNG and Selenide :smiley:
+# Test Automation with Java, TestNG and Selenide :smiley:
 Example test upload image
 
 **Prerequisite:**
