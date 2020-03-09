@@ -7,10 +7,10 @@ Example test upload image
 
 
 To run the project execute following commands:
-*Go to project path in terminal (folder with pom file)
-*Run mvn clean
-*Run mvn compile
-*Run mvn test
+* Go to project path in terminal (folder with pom file)
+* Run mvn clean
+* Run mvn compile
+* Run mvn test
 
 
 You can find the test result in **assignment\TestReport**
