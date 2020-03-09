@@ -12,12 +12,13 @@ import static com.codeborne.selenide.Selenide.$;
 public class MediaLibrary extends BaseWebPage{
 
     private SelenideElement uploadButton = $(byText("Upload"));
-    private SelenideElement advancedButton = $(byText("Advanced"));
+    private SelenideElement advancedButton = $(byCssSelector("button[data-test=\"btn-advanced\"]"));
     private SelenideElement publicIdInput = $(byCssSelector("input[data-test=public-id]"));
     private SelenideElement inputImage = $(byCssSelector("input[class=cloudinary_fileupload]"));
     private SelenideElement manageImageButton = $(byCssSelector("div[data-test=\"action-manage-btn\"]"));
     private SelenideElement deleteButton = $(byCssSelector("div[data-test=\"action-delete-btn\"]"));
     private SelenideElement approveDeleteButton = $(byCssSelector("button[data-test=\"confirm-dialog-confirm-btn\"]"));
+    private SelenideElement frame = $(byCssSelector("iframe[data-test=\"uw-iframe\"]"));
 
     public void clickOnUploadButton(){
     ExtentTestManager.getTest().info("Clicking on \"Upload\" button");
@@ -55,11 +56,15 @@ public class MediaLibrary extends BaseWebPage{
     }
 
     public void clickDeleteButton(){
-        ExtentTestManager.getTest().info("Deleting image");
+
         deleteButton.should(appear).click();
     }
 
     public void approveDeleteImage() {
         approveDeleteButton.should(appear).click();
+    }
+
+    public void waitTillFrameLoaded() {
+        frame.should(appear);
     }
 }
