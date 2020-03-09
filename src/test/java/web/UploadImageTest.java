@@ -9,6 +9,9 @@ import java.io.File;
 import java.nio.file.Paths;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+/**
+ * Test try to upload image and validate it appear on manage screen
+ */
 
 public class UploadImageTest extends BaseTest{
 
@@ -24,6 +27,15 @@ public class UploadImageTest extends BaseTest{
         mediaLibrary = new MediaLibrary();
         manageImage = new ManageImage();
     }
+/**
+ * @Test - upload Picture
+ *
+ * 1.Login to https://cloudinary.com/users/login
+ * 2.Open Media Library tab
+ * 3.Click on upload button (right upper conner)
+ * 4.In ‘My Files’ tab - upload an image with public ID (public ID can be set in advanced box)
+ * 5.Validate successful upload
+ */
 
     @Test
     public void uploadPicture(){
@@ -46,6 +58,13 @@ public class UploadImageTest extends BaseTest{
         //Validate image appear
         mediaLibrary.validateImageExistByPublicId(publicId);
     }
+
+/**
+ *  @Test validate Name In Manage Image Screen
+ *
+ *  6.Hover the uploaded image and click on ‘Manage’ button
+ *  7.Validate the correct image (by public ID) displayed in manage page
+ */
 
     @Test
     public void validateNameInManageImageScreen(){

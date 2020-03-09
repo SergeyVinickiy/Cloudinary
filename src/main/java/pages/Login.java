@@ -6,6 +6,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
+
 public class Login extends BaseWebPage{
 
     private String emailPath = "user_session[email]";

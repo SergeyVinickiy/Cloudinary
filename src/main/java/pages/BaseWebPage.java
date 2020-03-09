@@ -2,16 +2,22 @@ package pages;
 
 import java.util.ResourceBundle;
 
+/**
+ * BaseWebPage will be base class for all pages
+ * Initialise properties file and main methods
+ *
+ */
+
 public class BaseWebPage {
-    private String cloudeneryUrl;
+    private String cloudinaryUrl;
 
 
     public BaseWebPage() {
         ResourceBundle testData = ResourceBundle.getBundle("testData/data");
-        this.cloudeneryUrl = testData.getString("cloudinary.url");
+        this.cloudinaryUrl = testData.getString("cloudinary.url");
     }
 
     public String getCloudinaryUrl(){
-        return cloudeneryUrl;
+        return cloudinaryUrl;
     }
 }
